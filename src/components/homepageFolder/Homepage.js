@@ -1,13 +1,11 @@
 // Homepage.js
 import React, { useState } from "react";
 import Dropdown2 from "./Dropdown";
-import CharacterPage2 from "./CharacterPage";
 import styles from "./Homepage.module.css";
-import { characters } from "../../data/charactersData.js";
 import FreeHome from "./Free/FreeHome.js";
 import GabeHome from "./Gabriel/GabeHome.js";
 
-export default function Homepage() {
+export default function Homepage({ changeNavMode }) {
   const [selectedCharacter, setSelectedCharacter] = useState("character1");
 
   return (
@@ -17,7 +15,9 @@ export default function Homepage() {
         setSelectedCharacter={setSelectedCharacter}
       />
       {selectedCharacter === "character1" && <FreeHome />}
-      {selectedCharacter === "character2" && <GabeHome />}
+      {selectedCharacter === "character2" && (
+        <GabeHome changeNavMode={changeNavMode} />
+      )}
     </div>
   );
 }

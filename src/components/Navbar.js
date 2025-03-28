@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Navbar({ changeMode }) {
+export default function Navbar({ changeMode, navMode }) {
   const [hoveredButton, setHoveredButton] = useState(null);
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
@@ -19,15 +19,27 @@ export default function Navbar({ changeMode }) {
     setTooltipVisible(false);
   };
 
+  const navStyle = {
+    border: navMode === "dark" ? "1px solid white" : "1px solid black",
+  };
+
+  const navImgStyle = {
+    filter: navMode === "dark" ? "invert(100%)" : "",
+  };
+
   return (
-    <nav className="navbar shine">
+    <nav className="navbar shine" style={navStyle}>
       <button
         className="navbar-link"
         onMouseEnter={() => handleMouseEnter("home")}
         onMouseLeave={handleMouseLeave}
         onClick={() => changeMode("Home")}
       >
-        <img src={require("../images/home.png")} className="navbar-img" />
+        <img
+          src={require("../images/home.png")}
+          className="navbar-img"
+          style={navImgStyle}
+        />
         {tooltipVisible && hoveredButton === "home" && (
           <span className="tooltip">Homepage</span>
         )}
@@ -41,6 +53,7 @@ export default function Navbar({ changeMode }) {
         <img
           src={require("../images/questionmark.png")}
           className="navbar-img"
+          style={navImgStyle}
         />
         {tooltipVisible && hoveredButton === "questions" && (
           <span className="tooltip">20 Questions</span>
@@ -52,7 +65,11 @@ export default function Navbar({ changeMode }) {
         onMouseLeave={handleMouseLeave}
         onClick={() => changeMode("Astrology")}
       >
-        <img src={require("../images/star.png")} className="navbar-img" />
+        <img
+          src={require("../images/star.png")}
+          className="navbar-img"
+          style={navImgStyle}
+        />
         {tooltipVisible && hoveredButton === "astrology" && (
           <span className="tooltip">Astrology Signs</span>
         )}

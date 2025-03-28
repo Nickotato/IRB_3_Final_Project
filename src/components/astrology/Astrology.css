@@ -1,0 +1,116 @@
+.astrology-page {
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ring-1 {
+  width: 110vh;
+  height: 110vh;
+  border-radius: 50%;
+  border: 20px solid #3c3f45;
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-2 {
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+  border: 25px solid #3c3f45;
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-symbol {
+  filter: invert(100%) drop-shadow(-7px 10px 10px #c7c5c561);
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vh;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+/* Astrology Cards */
+.astrology-card {
+  width: 150px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.astrology-card:hover {
+  transform: translateY(-15px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.card-image {
+  width: 80px;
+  height: 80px;
+  filter: invert(100%);
+  margin-bottom: 10px;
+}
+
+.astrology-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+/* Hidden Information */
+.hidden-info {
+  opacity: 0;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+  color: #ccc;
+}
+
+.astrology-card:hover .hidden-info {
+  opacity: 1;
+}
+
+.info-section {
+  position: absolute;
+  left: 10%; /* Moves it to the left */
+  top: 50%; /* Centers it vertically */
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 10; /* Ensures it's above other elements */
+}
+
+.character-name {
+  font-size: 16px;
+  margin: 0;
+  color: #fff;
+}
+
+.sign-name {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.sign-description {
+  font-size: 18px;
+  max-width: 300px;
+}

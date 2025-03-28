@@ -7,17 +7,17 @@ export default function FreeHome() {
   const linksRef = useRef(null); // Reference for the links
 
   const images = [
-    { src: "https://picsum.photos/id/24/720/1330", caption: "Likes to read" },
+    { src: "https://picsum.photos/id/24/720/1280", caption: "Likes to read" },
     {
-      src: "https://picsum.photos/id/167/720/1330",
+      src: "https://picsum.photos/id/167/720/1280",
       caption: "Enjoys the Fall",
     },
     {
-      src: "https://picsum.photos/id/7/720/1330",
+      src: "https://picsum.photos/id/7/720/1280",
       caption: "Information Network",
     },
     {
-      src: "https://picsum.photos/id/209/720/1330",
+      src: "https://picsum.photos/id/209/720/1280",
       caption: "Explorer at heart",
     },
   ];
@@ -136,7 +136,17 @@ export default function FreeHome() {
               </a>
             </li>
           </ul>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p className="free-explanation">
+            Free is an extremely intelligent individual who has learned many
+            skills in life and always does well on exams. However, they have
+            chosen not to go to regular school and will not be going on to
+            college, but rather seeking other job opportunities. Free is not
+            Jude's or Kira's relative, but they attempt to fit in and take care
+            of the dogs they own. Free is usually extremely talkative and
+            skilled at steering conversations in desired directions. Free excels
+            at finding information quickly. Free likes simplicity, possessing
+            very little by way of possessions and traveling a great deal.
+          </p>
         </section>
       </div>
     </div>

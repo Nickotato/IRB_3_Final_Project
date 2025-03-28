@@ -1,23 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 /* Apply box-sizing: border-box to all elements without using '*' selector */
-.freehome-container3,
-.free-heading,
-h1,
-h2,
-ul,
-li,
-a,
-p,
-.phone-frame3,
-.phone-screen3,
-.image-container3,
-.image-slide3,
-.phone-image3,
-.caption3,
-.links {
-  box-sizing: border-box;
-}
 
 .freehome {
   display: flex;
@@ -175,7 +158,12 @@ p,
 }
 
 .links p {
+  /* font-size: 1rem;
+  color: #666; */
+  margin-top: 100px;
+}
+
+.free-explanation {
+  width: 600px;
   font-size: 1rem;
-  color: #666;
-  margin-top: 20px;
 }
