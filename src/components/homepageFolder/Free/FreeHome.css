@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+/* Apply box-sizing: border-box to all elements without using '*' selector */
+.freehome-container3,
+.free-heading,
+h1,
+h2,
+ul,
+li,
+a,
+p,
+.phone-frame3,
+.phone-screen3,
+.image-container3,
+.image-slide3,
+.phone-image3,
+.caption3,
+.links {
+  box-sizing: border-box;
+}
+
+.freehome {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.freehome-container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  /* height: 100%; */
+  width: 100%;
+  overflow: scroll;
+}
+
+.free-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative; /* Make sure the header can be positioned properly */
+}
+
+.free-heading > h1 {
+  font-size: 20rem;
+  margin-bottom: 0;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.free-heading > h2 {
+  font-size: 3rem;
+  margin-top: 0;
+  /* position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%); */
+}
+
+.phone-frame3 {
+  width: 360px;
+  height: 640px;
+  border-radius: 50px;
+  border: 16px solid #d1d1d1;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out; /* Fade-in transition */
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 0px;
+}
+
+.phone-frame3.visible {
+  opacity: 1; /* Fade-in effect */
+}
+
+.phone-screen3 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0px;
+}
+
+.phone-screen3::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 60px;
+  height: 6px;
+  background-color: #aaa;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.image-container3 {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  margin: 0px;
+  padding: 0px;
+}
+
+.image-slide3 {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  margin: 0px;
+}
+
+.phone-image3 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption3 {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: calc(100% - 20px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.links {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out; /* Fade-in transition */
+  margin-top: 200px;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.links.visible {
+  opacity: 1; /* Fade-in effect */
+}
+
+.links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links li {
+  margin: 10px 0;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+
+.links a:hover {
+  color: #007bff;
+}
+
+.links p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 20px;
+}

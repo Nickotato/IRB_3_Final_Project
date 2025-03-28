@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Bytesized&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+20&family=Pixelify+Sans:wght@400..700&family=Quicksand:wght@300..700&display=swap");
+/* font-family: "Bytesized", sans-serif;
+font-family: "Quicksand", sans-serif;
+font-family: "Exo 2", sans-serif;
+font-famil y: "Pixelify Sans", sans-serif;
+font-family: "Jersey 20", sans-serif; */
+
+body {
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  width: 20vw;
+  position: sticky;
+  margin: 0 auto;
+  border-radius: 3em;
+  backdrop-filter: blur(10px);
+  top: 1.4rem;
+  padding: 1em;
+  z-index: 999;
+  justify-content: space-around;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-link:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.navbar > button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.navbar-img {
+  scale: 200%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* For older browsers */
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.shine-scale:hover {
+  /* transform: scale(1.1); */
+  scale: 110%;
+}
+
+.shine-rotate:hover {
+  transform: rotate(-20deg);
+}
+
+.shine:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.btn:hover:before {
+  left: 100%;
+}
+
+.navbar-link:hover .tooltip {
+  visibility: visible;
+  opacity: 1; /* Fade in when hovering */
+}
+.navbar {
+  position: sticky;
+  top: 1.4rem;
+  /* other styles remain unchanged */
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 50vw;
+  }
+}

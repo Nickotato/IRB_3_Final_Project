@@ -1,0 +1,34 @@
+<div id="extra-info-panel" className={showPanel ? "show" : ""}>
+        <h3>Current Best Guess</h3>
+        <p id="best-guess">{bestGuess || "No guess yet"}</p>
+        <p id="best-guess-score">Score: {bestGuessScore}</p>
+        <h3>Possible Characters</h3>
+        <ul id="character-list">{renderCharacterList()}</ul>
+      </div>
+
+
+
+      // Render character list
+  const renderCharacterList = () => {
+    return Object.keys(characters).map((character) => (
+      <li key={character} className="character-item">
+        <div
+          className="character-header"
+          onClick={(e) => e.currentTarget.nextSibling.classList.toggle("open")}
+        >
+          <span>{character}</span>
+          <span>▼</span>
+        </div>
+        <div className="character-details">
+          <strong>Attributes:</strong>
+          <ul>
+            {Object.entries(characters[character].attributes)
+              .filter(([_, value]) => value)
+              .map(([key]) => (
+                <li key={key}>{key}</li>
+              ))}
+          </ul>
+        </div>
+      </li>
+    ));
+  };

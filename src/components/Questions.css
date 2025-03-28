@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Bytesized&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+20&family=Pixelify+Sans:wght@400..700&family=Quicksand:wght@300..700&display=swap");
+
+.layout {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Exo 2", sans-serif;
+}
+
+/* Main container styling */
+.container {
+  max-width: 600px;
+  width: 90%; /* responsive width */
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Answer buttons */
+.answer-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  transition: 0.3s ease-in-out all;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.answer-btn:hover {
+  background-color: #0056b3;
+  border: 1px solid black;
+  background: black;
+  color: white;
+}
+
+/* Toggle panel button */
+#toggle-panel-btn {
+  margin-top: 15px;
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  font-family: "Pixelify Sans", sans-serif;
+  box-shadow: 3px 3px 0px 0px;
+  transform: translate(-3px, -3px);
+}
+
+#toggle-panel-btn:hover {
+  box-shadow: none;
+  background-color: black;
+  color: white;
+  transform: none;
+}
+
+/* Extra info panel styling with slide-in animation */
+#extra-info-panel {
+  max-width: 600px;
+  width: 90%; /* responsive width */
+  margin: 20px auto 0;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+  border-top: 4px solid black;
+
+  /* Start off-screen (below) and invisible */
+  transform: translateY(100%);
+  opacity: 0;
+
+  /* Animate transform and opacity */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* When the panel is toggled to show */
+#extra-info-panel.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Character list */
+#character-list {
+  list-style: none;
+  padding: 0;
+}
+
+.character-item {
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  font-family: "Exo 2", sans-serif;
+}
+
+.character-header {
+  cursor: pointer;
+  padding: 10px 15px;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.character-header:hover {
+  background: black;
+}
+
+.character-details {
+  padding: 10px;
+  border-top: 1px solid black;
+  display: none; /* Hidden by default */
+  text-align: left;
+  background: #f9f9f9;
+}
+
+.character-details.open {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container,
+  #extra-info-panel {
+    width: 90%;
+  }
+}

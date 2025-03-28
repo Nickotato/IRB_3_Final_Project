@@ -1,0 +1,155 @@
+/* General Layout */
+.container2 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  /* Removed position: absolute; */
+}
+
+.overlay2 {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.characterName2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.characterDescription2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.linksList2 {
+  list-style: none;
+  padding: 0;
+}
+
+.linksList2 li {
+  margin: 5px 0;
+}
+
+.linksList2 a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.linksList2 a:hover {
+  color: #005f99;
+}
+
+/* Navbar Styling */
+.navbar2 {
+  position: fixed;
+  right: 2rem;
+  top: 1.4rem;
+  width: 9vw;
+  border: 1px solid black;
+  border-radius: 3em;
+  backdrop-filter: blur(10px);
+  padding: 1em;
+  z-index: 999;
+  font-family: "Exo 2", sans-serif;
+  overflow: hidden;
+  height: 2rem; /* Closed state height */
+  /* transition: all 0.2s ease-in-out; */
+  transition: background-color 0.8s ease, height 0.5s ease,
+    border-radius 0.5s ease;
+  /* Use flex column to stack the button and icons */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Expanded state increases height to reveal icons */
+.expanded {
+  height: 7rem; /* Adjust as needed for your icon row */
+  border-radius: 2em;
+}
+
+/* Fixed button wrapper to keep the button centered */
+.buttonWrapper {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Button styling */
+.navbarButton2 {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 1.3rem;
+}
+
+.navbarButton2:hover {
+  transform: scale(1.1);
+}
+
+/* Container for icons */
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem; /* Some spacing between button and icons */
+  gap: 1rem;
+  position: absolute;
+  top: 4rem;
+}
+
+/* Styling for each icon wrapper */
+.iconWrapper {
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s ease;
+}
+
+.iconWrapper:hover {
+  transform: scale(1.1);
+}
+
+/* Icon styling */
+.icon {
+  font-size: 1.5rem;
+}
+
+/* Active selection animation */
+@keyframes fillColor {
+  0% {
+    scale: 100%;
+  }
+  100% {
+    scale: 150%;
+  }
+}
+
+.active2 {
+  animation: fillColor 1s ease-out forwards;
+}
+
+@media (max-width: 600px) {
+  .navbar2 {
+    width: 50vw;
+    right: 50%;
+    transform: translateX(50%);
+    top: 100px;
+  }
+}
