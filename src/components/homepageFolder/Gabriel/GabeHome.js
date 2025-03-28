@@ -43,7 +43,7 @@ export default function GabeHome() {
           ></div>
         </ParallaxLayer>
         {/* #16303C */}
-        <ParallaxLayer offset={0.99} speed={1.5}>
+        <ParallaxLayer offset={1} speed={1.5}>
           <div id="textblock"></div>
         </ParallaxLayer>
       </Parallax>
