@@ -1,0 +1,174 @@
+/* NessHome.module.css */
+
+/* --- Base Container --- */
+.nessHomeContainer {
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* --- IMPORTANT: Replace with your actual image path --- */
+  background-image: url("../../../images/forest.jpg"); /* Adjust path as needed */
+  background-size: cover; /* Cover the entire container */
+  background-position: center center; /* Center the image */
+  background-attachment: fixed; /* Creates a subtle parallax effect on scroll */
+  position: relative; /* Needed for overlay */
+  overflow: hidden; /* Prevent potential overflows */
+  font-family: "Georgia", serif; /* Default elegant font */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* --- Optional: Add Google Fonts --- */
+/* You would typically link Google Fonts in your public/index.html */
+/* @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;700&display=swap'); */
+/* .nessHomeContainer { font-family: 'Montserrat', sans-serif; } */
+
+/* --- Darkening Overlay for Readability --- */
+.nessHomeContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    15,
+    48,
+    15,
+    0.4
+  ); /* Dark green semi-transparent overlay */
+  /* Or use a simple dark overlay: background-color: rgba(0, 0, 0, 0.5); */
+  z-index: 1; /* Behind the content */
+}
+
+/* --- Content Box --- */
+.contentBox {
+  position: relative; /* Ensures it's above the overlay */
+  z-index: 2; /* Above the overlay */
+  background-color: rgba(255, 255, 255, 0.1); /* Very subtle white background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  padding: 40px 60px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Soft shadow for depth */
+  text-align: center;
+  max-width: 700px; /* Max width for readability */
+  color: #e8f5e9; /* Light, slightly green text color */
+  animation: fadeInContent 1.5s ease-out forwards; /* Fade-in animation */
+}
+
+/* --- Fade-in Animation --- */
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Heading (Optional but nice) --- */
+.greeting {
+  font-family: "Georgia", serif; /* Or 'Lora', 'Playfair Display' etc. if using Google Fonts */
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Deeper shadow for heading */
+}
+
+/* --- Paragraph --- */
+.paragraph {
+  font-family: "Verdana", sans-serif; /* Or 'Montserrat' if using Google Fonts */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  color: #dcedc8; /* Slightly different light green */
+  max-width: 600px; /* Ensure paragraph isn't too wide */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Link List --- */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  gap: 15px 25px; /* Row and column gap */
+}
+
+/* --- Individual Link Item --- */
+.linkItem a {
+  color: #a5d6a7; /* A clear green for links */
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 50px; /* Pill shape */
+  border: 2px solid transparent; /* Prepare for hover border */
+  transition: all 0.3s ease-in-out;
+  display: inline-block; /* Needed for padding and transform */
+  background-color: rgba(10, 60, 10, 0.4); /* Darker green, subtle background */
+}
+
+/* --- Link Hover/Focus Effect --- */
+.linkItem a:hover,
+.linkItem a:focus {
+  color: #ffffff;
+  background-color: rgba(67, 160, 71, 0.7); /* Brighter green on hover */
+  border-color: rgba(255, 255, 255, 0.7); /* White border appears */
+  transform: translateY(-3px) scale(1.03); /* Slight lift and scale */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  outline: none; /* Remove default focus outline if needed */
+}
+
+/* --- Responsive Adjustments (Example) --- */
+@media (max-width: 768px) {
+  .contentBox {
+    padding: 30px 40px;
+    max-width: 90%;
+  }
+  .greeting {
+    font-size: 2.2rem;
+  }
+  .paragraph {
+    font-size: 1rem;
+  }
+  .linkList {
+    gap: 10px 15px;
+  }
+  .linkItem a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentBox {
+    padding: 25px 20px;
+    backdrop-filter: blur(
+      8px
+    ); /* Slightly less blur on small screens if needed */
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .greeting {
+    font-size: 1.8rem;
+  }
+  .linkList {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    gap: 15px;
+  }
+  .linkItem a {
+    width: 80%; /* Make buttons wider */
+    text-align: center;
+  }
+}

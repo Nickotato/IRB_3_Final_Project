@@ -25,7 +25,12 @@ export default function App() {
   return (
     <div className="App" style={appStyle}>
       <Navbar changeMode={changeMode} navMode={navMode} />
-      {mode === "Home" && <Homepage changeNavMode={changeNavMode} />}
+      {mode === "Home" && (
+        <Homepage
+          changeNavMode={changeNavMode}
+          changeAppStyle={changeAppStyle}
+        />
+      )}
       {mode === "Questions" && <TwentyQuestions />}
       {mode === "Astrology" && (
         <Astrology

@@ -4,8 +4,9 @@ import Dropdown2 from "./Dropdown";
 import styles from "./Homepage.module.css";
 import FreeHome from "./Free/FreeHome.js";
 import GabeHome from "./Gabriel/GabeHome.js";
+import NessHome from "./Ness/NessHome.js";
 
-export default function Homepage({ changeNavMode }) {
+export default function Homepage({ changeNavMode, changeAppStyle }) {
   const [selectedCharacter, setSelectedCharacter] = useState("character1");
 
   return (
@@ -16,8 +17,12 @@ export default function Homepage({ changeNavMode }) {
       />
       {selectedCharacter === "character1" && <FreeHome />}
       {selectedCharacter === "character2" && (
-        <GabeHome changeNavMode={changeNavMode} />
+        <GabeHome
+          changeNavMode={changeNavMode}
+          changeAppStyle={changeAppStyle}
+        />
       )}
+      {selectedCharacter === "character3" && <NessHome />}
     </div>
   );
 }

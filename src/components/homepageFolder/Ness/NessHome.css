@@ -1,0 +1,132 @@
+/* --- NessHome.css --- */
+
+/* --- Font Import (Example using Google Fonts) --- */
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap");
+
+/* --- Base Container Styling --- */
+/* We use a unique class name to scope everything */
+.ness-home-container {
+  /* --- Layout --- */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  min-height: 80vh; /* Ensure it takes significant vertical space */
+  padding: 50px 20px; /* Generous padding */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+
+  /* --- Background & Theme --- */
+  /* Subtle gradient background evoking nature */
+  background: linear-gradient(135deg, #f0f4f0 0%, #e6eae6 100%);
+  /* Alternative: A subtle texture or pattern */
+  /* background-image: url('/path/to/your/subtle-leaf-pattern.png'); */
+
+  /* --- Typography --- */
+  /* Using Lora for headings/accents and Quattrocento Sans for body */
+  font-family: "Quattrocento Sans", sans-serif;
+  color: #3a4d39; /* Dark, earthy green text color */
+  text-align: center;
+}
+
+/* --- Optional Icon Styling --- */
+.ness-home-icon {
+  color: #6b8e23; /* Olive green */
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* --- Title Styling --- */
+.ness-home-title {
+  font-family: "Lora", serif; /* More decorative font for the title */
+  font-size: 2.8rem; /* Large title */
+  font-weight: 600;
+  color: #4f6a4f; /* Slightly darker green for title */
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* --- Paragraph Styling --- */
+.ness-home-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7; /* Improved readability */
+  max-width: 650px; /* Prevent lines from becoming too wide */
+  margin-bottom: 40px; /* Space below paragraph */
+  color: #505d50; /* Slightly muted green/grey */
+}
+
+/* --- Navigation Area Styling --- */
+.ness-home-navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Link List Styling --- */
+.ness-home-link-list {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  justify-content: center; /* Center links */
+  gap: 15px 20px; /* Vertical and horizontal gap between links */
+}
+
+/* --- Link Item Styling --- */
+.ness-home-link-item {
+  /* No specific styles needed here if using gap on the parent */
+}
+
+/* --- Link Styling (Making them look appealing) --- */
+.ness-home-link {
+  display: inline-block; /* Allow padding and margins */
+  text-decoration: none; /* Remove underline */
+  font-weight: 700; /* Bold link text */
+  font-size: 1rem;
+  color: #ffffff; /* White text */
+  background-color: #779d77; /* Medium, natural green */
+  padding: 12px 28px; /* Comfortable padding */
+  border-radius: 30px; /* Pill-shaped buttons */
+  border: 2px solid transparent; /* Prepare for hover border */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+  /* --- Smooth Transitions --- */
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- Link Hover & Focus States --- */
+.ness-home-link:hover,
+.ness-home-link:focus {
+  /* Apply styles also on keyboard focus for accessibility */
+  background-color: #5e7e5e; /* Darker green on hover/focus */
+  color: #f0f4f0; /* Slightly off-white text on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  outline: none; /* Remove default browser outline */
+  border-color: #e6eae6; /* Add a subtle border matching the background */
+}
+
+/* --- Optional: Media Query for smaller screens --- */
+@media (max-width: 768px) {
+  .ness-home-title {
+    font-size: 2.2rem;
+  }
+
+  .ness-home-paragraph {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .ness-home-link-list {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    gap: 15px; /* Adjust gap for vertical layout */
+  }
+
+  .ness-home-link {
+    padding: 10px 25px;
+    width: 250px; /* Give stacked links a consistent width */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+}

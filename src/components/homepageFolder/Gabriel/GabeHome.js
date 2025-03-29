@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
 import "./GabeHome.css";
+import styles from "./GabeHome.module.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-export default function GabeHome({ changeNavMode }) {
+export default function GabeHome({ changeNavMode, changeAppStyle }) {
   useEffect(() => {
     changeNavMode("dark");
     document.body.style.backgroundColor = "#16303c";
+    // document.body.style.overflow = "hidden";
+    changeAppStyle({ background: "#16303c" });
 
     return () => {
       changeNavMode("light");
       document.body.style.backgroundColor = "white";
+      changeAppStyle({ background: "white" });
     };
   }, []);
 
@@ -74,29 +78,44 @@ export default function GabeHome({ changeNavMode }) {
                 Regardless of how he tried, he was unable to uncover the destiny
                 of his brother ultimately.
               </p>
-              <ul>
-                <li>
-                  <a href="https://www.pioneerbushcraft.org/nature-articles/bushcraft-articles/deepening-your-tracking-skills/">
+              <ul className={styles.ul}>
+                <li className={styles.li}>
+                  <a
+                    className={styles.a}
+                    href="https://www.pioneerbushcraft.org/nature-articles/bushcraft-articles/deepening-your-tracking-skills/"
+                  >
                     Deeping Your Tracking Skills
                   </a>
                 </li>
-                <li>
-                  <a href="https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-maps-mv.htm#:~:text=To%20create%20a%20meaningful%20map,the%20symbology%20is%20not%20intuitive.">
+                <li className={styles.li}>
+                  <a
+                    className={styles.a}
+                    href="https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-maps-mv.htm#:~:text=To%20create%20a%20meaningful%20map,the%20symbology%20is%20not%20intuitive."
+                  >
                     How to Make a Map
                   </a>
                 </li>
-                <li>
-                  <a href="https://www.wikihow.com/Live-off-the-Grid">
+                <li className={styles.li}>
+                  <a
+                    className={styles.a}
+                    href="https://www.wikihow.com/Live-off-the-Grid"
+                  >
                     How to Live Off the Grid
                   </a>
                 </li>
-                <li>
-                  <a href="https://outdoors.stackexchange.com/questions/27469/correct-technique-to-traverse-exposed-sandy-rock-slope">
+                <li className={styles.li}>
+                  <a
+                    className={styles.a}
+                    href="https://outdoors.stackexchange.com/questions/27469/correct-technique-to-traverse-exposed-sandy-rock-slope"
+                  >
                     Correct Way to Climb Sandy Slope
                   </a>
                 </li>
-                <li>
-                  <a href="https://www.fs.usda.gov/visit/know-before-you-go/cave-safety">
+                <li className={styles.li}>
+                  <a
+                    className={styles.a}
+                    href="https://www.fs.usda.gov/visit/know-before-you-go/cave-safety"
+                  >
                     Traverse Caves Safely
                   </a>
                 </li>
