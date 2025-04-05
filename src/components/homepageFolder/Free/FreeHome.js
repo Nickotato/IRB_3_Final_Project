@@ -148,6 +148,10 @@ export default function FreeHome() {
             very little by way of possessions and traveling a great deal.
           </p>
         </section>
+
+        <a href="https://irb3extra.netlify.app/" target="_blank">
+          Click here for a secret
+        </a>
       </div>
     </div>
   );
